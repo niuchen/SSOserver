@@ -1,0 +1,110 @@
+<% include header.ejs %>
+<style>
+    .sitemap h2 {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: #FF3366;
+        font-size: 36px;
+    }
+
+    .sitemap dl {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .sitemap dt {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .sitemap dd {
+        line-height: 32px;
+        font-size: 16px;
+    }
+    .sitemap dd small{
+        margin-left: 10px;
+    }
+</style>
+
+<section class="main-bg">
+    <div class="container sitemap">
+        <h2 class="text-center">网站地图 - 中国铁塔协办工作流程</h2>
+        <dl>
+            <!--<dt>注册&登录</dt>-->
+            <dd><a href="/login" target="_blank">登录<small>template:login</small></a></dd>
+            <dd><a href="/" target="_blank">门户首页<small>template:index</small></a></dd>
+        </dl>
+
+        <dl>
+            <dt>团队协作管理后台</dt>
+            <dd><a href="/admin/index" target="_blank">协作管理后台<small>template:admin/index</small></a></dd>
+            <dd><a href="/admin/new" target="_blank">新建协作<small>template:admin/new</small></a></dd>
+            <dd><a href="/admin/Gtasks" target="_blank">待办任务<small>template:admin/Gtasks</small></a></dd>
+            <dd><a href="/admin/Gtasks_fangui" target="_blank">待办任务-办理反馈<small>template:admin/Gtasks_fangui</small></a></dd>
+            <dd><a href="/admin/Gtasks_zhuanban" target="_blank">待办任务-办理转办<small>template:admin/Gtasks_zhuanban</small></a></dd>
+            <dd><a href="/admin/Gtasks_shenpi" target="_blank">待办任务-领导审批<small>template:admin/Gtasks_shenpi</small></a></dd>
+            <dd><a href="/admin/genzong" target="_blank">流程跟踪<small>template:admin/genzong</small></a></dd>
+            <dd><a href="/admin/detail" target="_blank">工单详情<small>template:admin/detail</small></a></dd>
+            <dd><a href="/admin/mywork_new" target="_blank">我创建的工作<small>template:admin/mywork_new</small></a></dd>
+            <dd><a href="/admin/mywork_duanxin" target="_blank">我创建的-短信催办<small>template:admin/mywork_duanxin</small></a></dd>
+            <dd><a href="/admin/mywork_xieban" target="_blank">我协办的工作<small>template:admin/mywork_xieban</small></a></dd>
+            <dd><a href="/admin/mywork_chaosong" target="_blank">抄送我的工作<small>template:admin/mywork_chaosong</small></a></dd>
+        </dl>
+
+
+        <!-- 日期条件 -->
+        <div class="form-inline">
+            <div class="sl-inner clearfix">
+                <div class="sl-key"><span>日期条件：</span></div>
+                <div class="sl-value">
+                    <div class="form-group">
+                        <label>年月日：</label>
+                        <input class="form-control Wdate" type="text" onClick="WdatePicker()">
+                    </div>
+                    <div class="form-group">
+                        <label>年月日：</label>
+                        <input class="form-control Wdate" id="d244" type="text" onfocus="WdatePicker({dateFmt:'yyyy年M月d日',vel:'d244_2'})"/>
+                    </div>
+                    <div class="form-group">
+                        <label>月日时分秒：</label>
+                        <input class="form-control Wdate" type="text" id="d241" onfocus="WdatePicker({dateFmt:'yyyy年MM月dd日 HH时mm分ss秒'})"/>
+                    </div>
+                    <div class="form-group">
+                        <label>年月：</label>
+                        <input class="form-control Wdate" type="text" id="d243" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy年MM月'})"/>
+                    </div>
+                    <div class="form-group">
+                        <label>时分秒：</label>
+                        <input class="form-control Wdate" type="text" id="d242" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'H:mm:ss'})"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="mt20 btn btn-default" data-toggle="modal" data-target="#myModal">弹出层</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">员工关怀</h4>
+                    </div>
+                    <div class="modal-body">
+                        这是内容区
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-danger">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+<% include footer.ejs %>

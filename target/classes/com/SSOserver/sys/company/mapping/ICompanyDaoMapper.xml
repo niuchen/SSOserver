@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+   
+<mapper namespace="com.SSOserver.sys.company.dao.ICompanyDao">
+
+	<!-- 查找系统表模块中的全部模块 -->
+	<select id="selectT_COMPANY" resultType="com.SSOserver.common.bean.T_COMPANY"
+		parameterType="Map">
+		select * from T_COMPANY m
+		where 1=1
+		<if test="noti_company_id != null">
+			and m.i_company_id not in(#{noti_company_id})
+		</if>
+		 <if test="notv_company_name != null">
+			and m.i_company_id not in(#{notv_company_name})
+		</if>
+		order by m.i_company_id asc
+	</select>
+
+ 
+</mapper>
